@@ -8,4 +8,5 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
 1. DOWNLOAD the database avaible in database folder.
 2. DECOMPRESS the files
 3. Using HMMER (http://hmmer.org/)
-      hmmscan <protein fasta file> ./database/LBDs-clusters 
+      <pre><code>hmmscan <protein fasta file> ./database/LBDs-clusters 
+      </code></pre>

@@ -18,4 +18,4 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
      
 ### Which is the Degree of Plant-Specificty according to my LBD cluster family?
 
-Each cluster has an associated Degree of Plant-Specificty (DPS) (DPS-clusters.tsv file) - corresponding to the proportion of Plant-Associated Bacteria (PAB) over the total species.  
+Each cluster has an associated Degree of Plant-Specificty (DPS) (DPS-clusters.tsv file) calculated as the proportion of Plant-Associated Bacteria (PAB) over the total species detected with the corresponding LBD.  

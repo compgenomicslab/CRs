@@ -15,10 +15,10 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
 
       <pre><code>hmmscan ./database/LBDs-clusters my_chemoreceptor_protein.fasta</code></pre>
       
-      INPUT: 
-            ./database/LBDs-clusters are the HMMs profiles from our de novo clasification of LBD types, each family correspond to one cluster (cluster_1, cluster_2, cluster_3, ...)
+      INPUT:  
+            - ./database/LBDs-clusters are the HMMs profiles from our de novo clasification of LBD types, each family correspond to one cluster (cluster_1, cluster_2, cluster_3, ...)
             
-            my_chemoreceptor_protein.fasta is the fasta file with the protein sequence of our chemoreceptor of interest
+           -  my_chemoreceptor_protein.fasta is the fasta file with the protein sequence of our chemoreceptor of interest
        
       OUTPUT:
             hmmscan output with the cluster of the LBD domain present, if any.

@@ -13,7 +13,7 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
 
 3. Use HMMER (http://hmmer.org/)
 
-      <pre><code>hmmscan my_chemoreceptor_protein.faa ./database/LBDs-clusters</code></pre>
+      <pre><code>hmmscan ./database/LBDs-clusters</code></pre>  my_chemoreceptor_protein.fasta
 
      
 ### Which is the Degree of Plant-Specificty according to my LBD cluster family?

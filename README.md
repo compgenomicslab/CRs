@@ -17,7 +17,7 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
       
       INPUT:
       * ./database/LBDs-clusters are the HMMs profiles from our de novo clasification of LBD types, each family correspond to one cluster (cluster_1, cluster_2, cluster_3, ...)
-      * my_chemoreceptor_protein.fasta is the fasta file with the protein sequence of our chemoreceptor of interest
+      * my_chemoreceptor_protein.fasta is the fasta file with the protein sequence of the chemoreceptor of interest
        
       OUTPUT:
       * hmmscan output with the cluster of the LBD domain present, if any.
@@ -27,4 +27,4 @@ In our catalog, we have analysed 82,277 CR sequences from 11,806 representative 
      
 ### Which is the Degree of Plant-Specificty according to my LBD cluster family?
 
-Each cluster has an associated Degree of Plant-Specificty (DPS) (DPS-clusters.tsv file) calculated as the proportion of Plant-Associated Bacteria (PAB) over the total species detected with the corresponding LBD.  
+Each cluster has an associated Degree of Plant-Specificty (DPS) calculated as the proportion of Plant-Associated Bacteria (PAB) over the total species detected with the corresponding LBD.  This value can be checked in the given table (DPS-clusters.tsv), consulting the DPS for the cluster number predicted in the previous step. 

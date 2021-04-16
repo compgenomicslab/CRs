@@ -1,6 +1,6 @@
 # LBDs catalog
 
-In our catalog, we have analysed 82,277 CR sequences from 11,806 representative microbial genomes covering the whole prokaryotic species phylogeny and have classified them according to their LBD types using a de novo LBD family annotation method. A total of 72,480 putative LBD sequences has been clustered in 5,149 families of homologous sequences. Here, LBDs hiden Markov models (HMMs) profiles from our novel families are avaiable for clasifying chemoreceptor protein sequences.
+In our catalog, we have analysed 82,277 CR sequences from 11,806 representative microbial genomes covering the whole prokaryotic species phylogeny and have classified them according to their LBD types using a de novo LBD family annotation method. A total of 72,480 putative LBD sequences has been clustered in 5,149 families of homologous sequences (fasta sequences of each cluster are provided in LBDs-clusters-seq.tar.gz compressed file). Here, LBDs hiden Markov models (HMMs) profiles from our novel families are avaiable for clasifying chemoreceptor protein sequences.
 
 ##### Plant-associated Chemoreceptors (CRs)
 

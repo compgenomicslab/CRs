@@ -6,7 +6,6 @@ CLUSTER:
 	        tmhmm {fasta} > {output}
 	        cat {output} | awk '/Number of predicted/{split($0, v, ":"); found=int(v[3]); print $0} /TMhelix/{if (found<150) print $0}' > {output.filtered}
 
-the following points are done in ./get_lbds.sh 
 2. Get LBDs from sequences with 1 and 2 TM domains.
 	        python tmhmm_output.py {output.tmhmm.filtered} {fasta of CRs}
 	        as output we obtain two fastas: lbds_

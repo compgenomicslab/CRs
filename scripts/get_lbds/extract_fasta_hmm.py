@@ -13,7 +13,7 @@ def write_fasta(seq_id, seq, output):
 
 
 seq2dom = {}
-
+#GET THE COORDENATES IN THE HMM OUTPUT FILE
 for ln, line in enumerate(open(seq2dom_info)):
 	line = line[:-1].split("\t")
 	if not line[0] in seq2dom.keys():
@@ -28,6 +28,7 @@ for ln, line in enumerate(open(seq2dom_info)):
 	seq2dom[line[0]][line[1]]["e"]=line[7]
 #print(seq2dom)
 
+#CREATE A FASTA WITH THE LBDS BY RETRIEVING THE SEQUENCE IN THE COORDENATES PREVIOUSLY PARSED
 name2seq={}
 seq_order=[]
 for seq_record in SeqIO.parse(str(sys.argv[2]), "fasta"):
@@ -47,7 +48,5 @@ for i in seq_order:
 	except KeyError:
 		write_fasta(i,str(name2seq[i]),"nodomains.faa")
 
-#		print(">"+dom+"\t"+i)i
-#		print(dom)
-#		print(name2seq[i][int(seq2dom[i][dom]["s"]):int(seq2dom[i][dom]["e"])])
+
 

@@ -2,26 +2,20 @@
 ##Pipeline##
 ==========================================================================================================
 CLUSTER:
-1. Sacar dominios con HMM de ../mcps.proteins/total.mcps.faa
-	hmmsearch (run_hmm.sh)
-	#Referencia a Pfam-A-clans.tsv
-	python sort_domtbout_ali_coord.py  {input} {output.clean_dom} {output.sort_dom}
-	python pfam_parse_clan_overlap.py {input} {params.out_name}
-
-2. Hacer tmhmm
-	        /home/csanchis/MCPs/transmembrana/tmhmm-2.0c/bin/tmhmm {fasta} > {output}
+1. TMHMM analysis and filtering 
+	        tmhmm {fasta} > {output}
 	        cat {output} | awk '/Number of predicted/{split($0, v, ":"); found=int(v[3]); print $0} /TMhelix/{if (found<150) print $0}' > {output.filtered}
 
-LOCAL:
-Puntos 3-5 en ../../src/get_lbds.sh 
-3 Sacar los lbds de secuencias con 2tms y con 1tm (al N-terminal)
-	        python ../../src/tmhmm_output.py {output.tmhmm.filtered} {fasta}
-	        como output: dos fasta "lbds_1tm.faa"
-4 python ../../src/ extract_fasta_hmm.py ./hmm_output/{ouput}_seq2dom_info.tsv {fasta}
-	        (como output te da los lbds, los mcp y los que no tienen domain según PFAM
-	        grep '>' LBDs.v1.faa | awk '{split($0, v, "."); print v[2]}' | sort | uniq -c > lbd_distirbution.txt
+the following points are done in ./get_lbds.sh 
+2. Get LBDs from sequences with 1 and 2 TM domains.
+	        python tmhmm_output.py {output.tmhmm.filtered} {fasta of CRs}
+	        as output we obtain two fastas: lbds_
+		
+3. Get all domains with HMM from the fasta with all the CRs
 
-5 Juntar todos los lbds (los de pfam, los de 2tm y los de 1tm) : rebundant_lbds.faa
-	        python ../../src/add_fasta_id.py total_lbds.faa LBDs.v1.faa > {output_total_lbds}
-
-
+4 Get LBDs from HMM searches
+		python extract_fasta_hmm.py {hmm_ouput} {fasta of CRs}
+		output: Fasta of LBDs and fasta of MCPsignal
+		
+5 Merge de information and extract the common LBDs
+	        python add_fasta_id.py merged_lbds.faa LBDs_hmm.faa > {output_total_lbds}
